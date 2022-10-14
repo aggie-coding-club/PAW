@@ -28,7 +28,7 @@ export default class Example extends Component {
         />
       </View>
 
-      <View style={styles.inputContainer}>
+      <View style={styles.inputContainer1}>
         <Icon
           style={styles.inputIcon}
           name={'person-outline'} 
@@ -43,7 +43,7 @@ export default class Example extends Component {
         />
       </View>
 
-      <View style={styles.inputContainer}>
+      <View style={styles.inputContainer2}>
         <Icon
           style={styles.inputIcon}
           name={'lock-closed-outline'} 
@@ -71,7 +71,7 @@ export default class Example extends Component {
           <Text style={styles.text}>Login</Text>
       </TouchableOpacity>
 
-      <View style={{marginTop: 20, flexDirection: 'row', alignItems: 'center'}}>
+      <View style={styles.orBar}>
         <View style={{flex: 1, height: 1, backgroundColor: 'black'}} />
         <View>
           <Text style={{width: 50, textAlign: 'center'}}>OR</Text>
@@ -98,13 +98,16 @@ const styles = StyleSheet.create({
   },
   logoContainer: {
     alignItems: 'center',
-    marginBottom: 50
+    position: 'absolute', top: 115, left: 0, right: 0, bottom: 0
   },
   logo: {
     width: 250,
     height: 250
   },
-  inputContainer: {
+  inputContainer1: {
+    marginTop: 350,
+  },
+  inputContainer2: {
     marginTop: 10,
   },
   input: {
@@ -140,6 +143,15 @@ const styles = StyleSheet.create({
     fontsize: 20,
     textAlign: 'center',
   },
+  orBar: {
+    flexDirection: 'row', 
+    alignItems: 'center',
+    marginTop: 20
+    //position: 'absolute', bottom: 50
+    // need to mess with the values of the absolute pos to find the right pos
+    // otherwise it will attach to the other elements when using keyboard animation
+    // don't have time right now
+  },
   btnCreateAcc: {
     width: WIDTH - 200,
     height: 45,
@@ -147,5 +159,9 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(0, 0, 0, 0.35)',
     justifyContent: 'center',
     marginTop: 20
+    //position: 'absolute', bottom: 25
+    // need to mess with the values of the absolute pos to find the right pos
+    // otherwise it will attach to the other elements when using keyboard animation
+    // don't have time right now
   },
 });
